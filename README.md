@@ -15,7 +15,7 @@ docker run \
 	--detach \
 	--volume /home/svn:/var/opt/svn \
 	--publish 3690:3690 \
-	garethflowers/svn-server
+	drivve/svn-server
 ```
 
 ### Creating a new SVN Repository
@@ -30,4 +30,4 @@ docker exec -it my-svn-server svnadmin create new-repo
 ## License
 
 *	Apache Subversion is released under the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
-*	This image is released under the [MIT License](https://raw.githubusercontent.com/garethflowers/docker-svn-server/master/LICENSE).
+*	This image is released under the [MIT License](https://raw.githubusercontent.com/thrichter/docker-svn-server/master/LICENSE).
