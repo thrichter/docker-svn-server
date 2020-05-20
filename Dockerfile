@@ -14,12 +14,13 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 	org.label-schema.vcs-url="https://github.com/thrichter/docker-svn-server" \
 	org.label-schema.version=$VERSION
 
+RUN apk add --no-cache \
+	subversion==1.12.2-r1 \
+	wget==1.20.3-r0
+
 CMD [ "/usr/bin/svnserve", "--daemon", "--foreground", "--root", "/var/opt/svn" ]
 EXPOSE 3690
 HEALTHCHECK CMD netstat -ln | grep 3690 || exit 1
 VOLUME [ "/var/opt/svn" ]
 WORKDIR /var/opt/svn
 
-RUN apk add --no-cache \
-	subversion==1.13.0 \
-	wget==1.20.3-r0
